@@ -10,6 +10,10 @@ def check_events(ship):
 			# Переместить корабль вправо.
 			if event.key == pygame.K_RIGHT:
 				ship.rect.centerx += 1
+				ship.moving_right = True
+		elif event.type == pygame.KEYUP:
+			if event.key == pygame.K_RIGHT:
+				ship.moving_right = False		
 def update_screen(ai_settings, screen, ship):
 	"""Обновляет изображения на экране и отображает новый экран."""
 	#При каждом проходе цикла перерисовыается экран.
